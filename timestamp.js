@@ -21,7 +21,7 @@ module.exports = format((info, opts = {}) => {
   if (!info.timestamp) {
     const dt = new Date();
     let diffTZ = dt.getTimezoneOffset();
-    info.timestamp = new Date(dt.getTime() - diffTZ*60000)
+    info.timestamp = new Date(dt.getTime() - diffTZ*60000).toISOString()
   }
 
   if (opts.alias) {
